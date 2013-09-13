@@ -19,5 +19,3 @@
 //= require fullcalendar.min
 //= require gcal
 //= require_tree .
-
-
