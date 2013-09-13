@@ -3,8 +3,40 @@ class Appointment < ActiveRecord::Base
 	
 	before_validation :set_end_date
 	validate :appointment_overlap
+	validate :early_appointment
+	validate :late_appointment
+	validate :more_than_one_appointment_per_two_weeks
+
 	after_create :update_all_connected_clients_add_event
 	after_destroy :update_all_connected_clients_remove_event
+
+	def more_than_one_appointment_per_two_weeks
+		unless self.user.is_admin
+			apt_time = self.start_time
+			#debugger
+			if Appointment.where("((start_time < ? AND start_time > ?) || (start_time > ? AND start_time < ?)) AND user_id = ?", apt_time, (apt_time - 14.days), apt_time, (apt_time + 14.days), self.user.id).first
+				errors.add(:start_time, "System only allows one appointment per two weeks. Please call directly to make an appointment.")
+
+				puts "ok"
+			end
+
+
+		end
+
+	end
+
+
+	def early_appointment 
+		if self.start_time  < (DateTime.now + 1.days).beginning_of_day && !self.user.is_admin
+			errors.add(:start_time, "To make an appointment for today, please call us directly.")
+		end
+	end
+
+	def late_appointment 
+		if self.start_time  > (DateTime.now + 90.days) && !self.user.is_admin
+			errors.add(:start_time, "You can only make an appointment 90 days ahead.")
+		end
+	end
 
 	def  update_all_connected_clients_remove_event
     Pusher['appointments'].trigger('remove_event', {

@@ -127,26 +127,29 @@ $(document).ready(function() {
     });
 
     $("form#new_appointment").submit(function(e){
+      var time = null;
+      var end_time = null;
+      var start_time = null;
 
       e.preventDefault();
       if (gon.admin) {
         var date = $(this).find("#block_full_date").html();
-        var start_time = $(this).find("#timepicker_start").val();
-        var end_time = $(this).find("#timepicker_end").val();
+        start_time = $(this).find("#timepicker_start").val();
+        end_time = $(this).find("#timepicker_end").val();
 
         $(this).find("#timepicker_start").val(date + " " + start_time);
         $(this).find("#timepicker_end").val(date + " " + end_time);
       }
       else {
         var date = $(this).find("#full_date").html();
-        var time = $(this).find("#timepicker").val();
+        time = $(this).find("#timepicker").val();
         $(this).find("#timepicker").val(date + " " + time);
 
       }
-      //console.log($(this).serialize());
+
       $.post($(this).attr('action') + ".js", $(this).serialize(), function(data) {});
 
-      if (typeof(time) == "undefined") {
+      if (time != null) {
         $(this).find("#timepicker").val(time);
       }
       else {
