@@ -1,0 +1,7 @@
+<% if @appointment.errors.count > 0 %>
+	$(".make_appointment_server_info").html("<%= @appointment.errors.messages[@appointment.errors.messages.first.first][0] %>");
+	$(".make_appointment_server_info").show();
+<% else %>
+	$('#make_appointment').modal('hide');
+	$("#calendar").fullCalendar( 'unselect' )
+<% end %>

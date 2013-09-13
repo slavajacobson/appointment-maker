@@ -1,0 +1,29 @@
+
+<%= form_for @appointment do |f| %>
+  <%= hidden_field_tag :block_appointments %>
+  <div class="make_appointment_server_info alert alert-error"></div>
+
+  <h4> Date and Time </h2>
+
+  <div class="field">
+    
+    <div>
+      Day: <span style="font-weight:bold;" id="block_full_date"></span>  
+    </div> 
+
+    Start time:
+    <div class="bootstrap-timepicker">
+      <%= f.text_field :start_time, id: 'timepicker_start', class:'input-small' %> 
+    </div>
+
+    End time:
+    <div class="bootstrap-timepicker">
+      <%= f.text_field :end_time, id: 'timepicker_end', class:'input-small' %> 
+    </div>
+
+  </div>
+  <div class="actions">
+    <%= f.submit "Block", class: 'btn btn-success' %>
+  </div>
+
+<% end %>

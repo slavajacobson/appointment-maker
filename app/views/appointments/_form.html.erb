@@ -1,0 +1,43 @@
+<% edit_json = (params[:format] == "js" &&  params[:action] == "edit") %>
+
+<%= form_for @appointment do |f| %>
+  <%= hidden_field_tag :appointment_form_action %>
+  <div class="make_appointment_server_info alert alert-error"></div>
+  <h4> Date and Time </h2>
+
+  <% if edit_json %>
+    <p>Day: <%= @appointment.start_time.strftime("%A - %B %d") %></p>
+    <p>Starts: <%= @appointment.start_time.strftime("%I:%M %p") %></p>
+    <p>Ends: <%= @appointment.end_time.strftime("%I:%M %p") %></p>
+
+  <% else %>
+
+    <div class="field">
+      
+      <div id="appointment_date_text">
+      On <span style="font-weight:bold;" id="full_date"></span> at 
+      </div> 
+      <div class="bootstrap-timepicker">
+        <%= f.text_field :start_time, id: 'timepicker', class:'input-small' %> 
+      </div>
+    </div>
+
+    <div class="field">
+      <h4> Select Type </h2>
+      <%= f.select :appointment_type, [['Short', 0], ['Long', 1], ['Longer', 2]] %>
+    </div>
+
+  <% end %>
+
+
+  <div class="field">
+     <h4> Comments (optional) </h2>
+    <%= f.text_area :comment, style: 'width:515px; height:100px;' %> 
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit nil, class: 'btn btn-success' %>
+    <%= f.submit "Cancel Appointment", name: 'cancel', class: 'btn btn-danger' if edit_json %>
+  </div>
+<% end %>

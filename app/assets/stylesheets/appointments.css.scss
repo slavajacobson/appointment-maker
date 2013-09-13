@@ -1,0 +1,39 @@
+#info_box {
+  border:1px solid black;
+  background-color: white;
+  position:absolute;
+  width:135px;
+  height:40px;
+  z-index:6;
+  padding:5px;
+  display:none;
+}
+.fc-agenda-slots {
+  cursor:pointer;
+}
+.user_event {
+  cursor:pointer;
+}
+.busy_event {
+  background-color:grey;
+  border-color:grey;
+}
+
+#appointment_date_text {
+  line-height: 0px;
+  font-size: 14px;
+  padding-bottom: 10px;
+   display:inline-block;
+}
+
+.bootstrap-timepicker {
+  display:inline-block;
+}
+.make_appointment_server_info {
+	display:none;
+}
+
+.blocked_event {
+  background-color: rgb(202, 90, 90);
+  border-color: rgb(153, 70, 70);
+}
