@@ -7,5 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+User.create(email:'iam.irina@gmail.com', password: '12344321', 
+						password_confirmation:'12344321', is_admin: true, full_name: "Irina P.", phone_number:"6477782846")
+
 User.create(email:'vs.jacobson@gmail.com', password: '12344321', 
-						password_confirmation:'12344321', is_admin: true, full_name: "Slava Jacobson", phone_number:"6477782846")
+						password_confirmation:'12344321', is_admin: true, full_name: "Slava J.", phone_number:"6477782846")
