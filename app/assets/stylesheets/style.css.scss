@@ -10,7 +10,7 @@ body {
 	font-size:12px;
 	width:100%;
 	line-height:18px;
-	background:url(../images/body-bg.jpg) 0 0 repeat;
+	background: image-url("body-bg.jpg") 0 0 repeat;
 	position:relative;
 }
 #wrapper{
@@ -119,7 +119,7 @@ section#content{
 }
 
 section#content .inner{
-	background:url(../images/container_bg.jpg) 0 0 repeat;
+	background:image-url("container_bg.jpg") 0 0 repeat;
 	height:675px;
 	overflow:hidden;
 	width:100%;
@@ -147,7 +147,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	font-family:Arial, Helvetica, sans-serif;
 	text-transform:capitalize;
 	text-align:center;
-	background-image:url(../images/nav-a.png);
+	background-image:image-url("nav-a.png");
 	background-position:0 0;
 	background-repeat:no-repeat;
 	
@@ -177,7 +177,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	text-align:center;
 	width:108px;
 	height:13px;
-	background-image:url(../images/nav-sub-a.png);
+	background-image:image-url("nav-sub-a.png");
 	background-position:0 0;
 	background-repeat:no-repeat;
 	
@@ -210,7 +210,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	position:relative;
 }
 .divider{
-	background:url(../images/divider-bg.gif) 0 0 repeat-y;
+	background:image-url("divider-bg.gif") 0 0 repeat-y;
 	width:2px;
 	position:absolute;
 	top:0;
@@ -240,7 +240,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 
 .spacer{
 	height:2px;
-	background:url(../images/spacer.gif) 0 0 repeat-x;
+	background:image-url("spacer.gif") 0 0 repeat-x;
 	margin:25px 0;
 }
 
@@ -285,7 +285,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	font-size:12px;
 	line-height:1.2em;
 	padding-right:10px;
-	background:url(../images/read-more-marker.gif) right 6px no-repeat;
+	background:image-url("read-more-marker.gif") right 6px no-repeat;
 	
 	transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
@@ -309,7 +309,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 .testimonials-list{}
 
 .testimonials-list li{
-	background:url(../images/quote.png) 0 4px no-repeat;
+	background:image-url("quote.png") 0 4px no-repeat;
 	padding-left:20px;
 	margin-top:25px;
 }
@@ -351,7 +351,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 		color:#6c5e4e;
 		margin-top:26px;
 		padding-top:28px;
-		background:url(../images/spacer.gif) 0 0 repeat-x;
+		background:image-url("spacer.gif") 0 0 repeat-x;
 	}
 	.events-list li:first-child{
 		background:none;
@@ -394,7 +394,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 		color:#6c5e4e;
 		margin-top:26px;
 		padding-top:28px;
-		background:url(../images/spacer.gif) 0 0 repeat-x;
+		background:image-url("spacer.gif") 0 0 repeat-x;
 	}
 	.news-list li:first-child{
 		background:none;
@@ -418,7 +418,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 .zoom{
 	display:block;
 	position:absolute;
-	background-image:url(../images/zoom.png);
+	background-image:image-url("zoom.png");
 	background-repeat:no-repeat;
 	background-position:center center;
 	left:0;
@@ -428,11 +428,11 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	z-index:5;
 }
 .zoom.video-play{
-	background-image:url(../images/video-play.png);
+	background-image:image-url("video-play.png");
 	
 }
 .gallery-hover{
-	background:url(../images/slider-caption-bg.png) 0 0 repeat;
+	background:image-url("slider-caption-bg.png") 0 0 repeat;
 	display:block;
 	position:absolute;
 	width:100%;
@@ -487,16 +487,16 @@ a.jp-volume-max {
     margin-left: 105px;
 }
 a.jp-mute {
-    background: url(../images/minus.png) no-repeat scroll left center transparent;
+    background: image-url("minus.png") no-repeat scroll left center transparent;
 }
 
 a.jp-unmute {
-    background: url(../images/close.png) no-repeat scroll left center transparent;
+    background: image-url("close.png") no-repeat scroll left center transparent;
     display: none;
 }
 
 a.jp-volume-max {
-    background: url(../images/plus.png) no-repeat scroll left center transparent;
+    background: image-url("plus.png") no-repeat scroll left center transparent;
 }
 
 div.jp-txt {
@@ -574,6 +574,6 @@ form#contact textarea {
 	width:97%;
 }
 .preloader{
-	background:url(../images/preload_img.gif) center center no-repeat;
+	background:image-url("preload_img.gif") center center no-repeat;
 	display:block;
 }

@@ -2,9 +2,9 @@
 $(document).ready(function(){
 	$("#jquery_jplayer").jPlayer({
 		ready: function () {
-			$(this).jPlayer("setMedia", {
-				mp3:"music.mp3"
-			});
+			// $(this).jPlayer("setMedia", {
+			// 	mp3:"music.mp3"
+			// });
 			//$(this).jPlayer("play");
 			var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
 			var kickoff = function () {
