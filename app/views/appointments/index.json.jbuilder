@@ -9,7 +9,7 @@ json.array!(@appointments) do |appointment|
 	if current_user.is_admin
 	  json.allDay false
 	  json.type appointment.appointment_type
-	  json.title "Client: #{appointment.user.full_name} Comment:"
+	  json.title "Client: #{appointment.user.full_name} Comment: #{appointment.comment}"
 	  json.start appointment.start_time.strftime("%F %T")
 	  json.end appointment.end_time.strftime("%F %T")
 	  json.id appointment.id
