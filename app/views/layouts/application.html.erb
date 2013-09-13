@@ -38,8 +38,8 @@
                         <div id="user_nav">
                           <% if user_signed_in? %>
                             <strong>Hello <%= current_user.full_name %></strong>
-                            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  |
-                            <%= link_to "Edit Profile", edit_user_registration_path %>
+                            (<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  |
+                            <%= link_to "Edit Profile", edit_user_registration_path %>)
                             
                           <% else %>
                             <%= link_to "Sign up", new_user_registration_path %> or
@@ -67,18 +67,18 @@
                   <div class="container_24">
                         <nav id="menu">
                             <ul class="mainmenu">
-                                <li><a href="#home">home</a></li>
-                                <li><a href="#about">About</a></li>
+                                <li><a href="#home">N / A</a></li>
+                                <li><a href="#about">N / A</a></li>
                                 <li>
-                                    <a href="javascript:void(0);">Media</a>
+                                    <a href="javascript:void(0);">N / A</a>
                                     <ul class="sub_menu level1">
-                                        <li><a href="#media-images">Galleries</a></li>
-                                        <li><a href="#media-videos">Videos</a></li>
+                                        <li><a href="#media-images">N / A</a></li>
+                                        <li><a href="#media-videos">N / A</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#events">Events</a></li>
-                                <li><a href="#news">News</a></li>
-                                <li><a href="#contacts">Contact</a></li>
+                                <li><a href="#events">N / A</a></li>
+                                <li class="act"><a href="#scheduler">Book</a></li>
+                                <li><a href="#contacts">N / A</a></li>
                                 <div class="clear"></div>
                             </ul>
                         </nav>
