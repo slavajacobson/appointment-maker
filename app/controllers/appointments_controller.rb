@@ -12,12 +12,15 @@ class AppointmentsController < ApplicationController
       format.html {
         @appointment = Appointment.new
       }
+
+      
+
       format.json { 
         #debugger
         if params[:id]
           @appointment = Appointment.find(params[:id])
         else
-          @appointments = Appointment.all
+          @appointments = Appointment.where("start_time >= ? AND start_time <= ?", DateTime.strptime(params[:start],'%s'), DateTime.strptime(params[:end],'%s'))
         end
         
       
@@ -40,6 +43,8 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1/edit
   def edit
+
+
   end
 
   # POST /appointments
@@ -70,6 +75,8 @@ class AppointmentsController < ApplicationController
       if (params[:appointment_form_action] == "commit")
         @appointment.update(appointment_params)
       elsif (params[:appointment_form_action] == "cancel")
+        @appointment.destroy
+      elsif (params[:unblock_appointment])
         @appointment.destroy
       end
       

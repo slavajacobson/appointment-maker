@@ -133,9 +133,9 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 .mainmenu>li{
 	margin:10px 0 0 10px;
 }
-.mainmenu li a { 
+.mainmenu li a, .button { 
 	display:block;
-	width:81px;
+	width:81px !important;
 	text-align:center;
 	line-height:1.2em;
 	font-size:14px;
@@ -150,7 +150,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	background-image:image-url("nav-a.png");
 	background-position:0 0;
 	background-repeat:no-repeat;
-	
+	border: none;
 	transition: background-position 0.2s ease-in-out;
 	-moz-transition: background-position 0.2s ease-in-out;
 	-webkit-transition: background-position 0.2s ease-in-out;
@@ -158,7 +158,7 @@ nav#menu{position:relative;margin:20px 0 28px -10px;}
 	
 	
 }
-.mainmenu li.act a, .mainmenu li a:hover{ background-position:right 0;color:#2c2721;text-shadow:1px 1px 1px #ff7e3f;}
+.mainmenu li.act a, .mainmenu li a:hover, .button:hover{ background-position:right 0;color:#2c2721;text-shadow:1px 1px 1px #ff7e3f;}
 /*Submenu*/
 .level1 { left:-1px; top:44px;z-index:999;}
 .level2 { left:200px; top:0px;}
@@ -537,10 +537,10 @@ form#contact span{
 }
 
 
-form#contact input[type="text"],
+input[type="text"],
 input[type="password"],
 input[type="email"],
-form#contact textarea,
+textarea,
 select {
 	
 	border:#bdb4aa 1px solid;

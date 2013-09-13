@@ -1,0 +1,25 @@
+
+<%= form_for @appointment do |f| %>
+  <%= hidden_field_tag :unblock_appointment %>
+  <div class="make_appointment_server_info alert alert-error"></div>
+
+  <h4> Date and Time </h2>
+
+  <div class="field">
+    
+    <p>
+      Day: <%= @appointment.start_time.strftime("%A - %B %d") %>
+    </p> 
+    <p>
+    Start time: <%= @appointment.start_time.strftime("%T") %>
+    </p>
+    <p>
+    End time: <%= @appointment.end_time.strftime("%T") %>
+    </p>
+
+  </div>
+  <div class="actions">
+    <%= f.submit "Unblock", class: 'btn btn-success' %>
+  </div>
+
+<% end %>

@@ -3,9 +3,11 @@
 <%= form_for @appointment do |f| %>
   <%= hidden_field_tag :appointment_form_action %>
   <div class="make_appointment_server_info alert alert-error"></div>
-  <h4> Date and Time </h2>
+  <h4> Appointment Information </h2>
 
   <% if edit_json %>
+    <p>Name: <%= @appointment.user.full_name %></p>
+    <p>Phone number: <%= @appointment.user.phone_number %></p>
     <p>Day: <%= @appointment.start_time.strftime("%A - %B %d") %></p>
     <p>Starts: <%= @appointment.start_time.strftime("%I:%M %p") %></p>
     <p>Ends: <%= @appointment.end_time.strftime("%I:%M %p") %></p>

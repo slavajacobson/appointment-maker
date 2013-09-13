@@ -1,1 +1,7 @@
-<%= render 'form' %>
+<% if params[:type] == "blocked_event" && current_user.is_admin %>
+	<%= render 'form_admin_unblock' %>
+<% else %>
+
+	<%= render 'form' %>
+
+<% end %>

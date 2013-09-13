@@ -5,13 +5,11 @@ $(document).ready(function() {
     $('#calendar').fullCalendar({
 
         eventClick:function( event, jsEvent, view ) { 
-          if ($.inArray("user_event",event.className) >= 0) {
-            // console.log("event click:");
-            // console.log(event);
-            // console.log(jsEvent);
-            // console.log(view);
+          if ($.inArray("user_event",event.className) >= 0 || $.inArray("blocked_event",event.className) >= 0) {
 
-            $.get('/appointments/' + event.id + '/' + "edit.js", function(data) {
+            $.get('/appointments/' + event.id + '/' + "edit.js?type=" + event.className[0], function(data) {
+
+
               $edit_appointment_form = $(data)
 
               $("#edit_appointment_form").html($edit_appointment_form);
@@ -28,6 +26,7 @@ $(document).ready(function() {
             $('#edit_appointment').modal('show');
 
           }
+
           
         },
         columnFormat: {
@@ -82,6 +81,7 @@ $(document).ready(function() {
         slotMinutes:30,
         maxTime: 19,
         events: '/appointments.json'
+
     });
 
     $(".fc-agenda-slots").on("mousemove", function(e) {
@@ -160,7 +160,8 @@ $(document).ready(function() {
     var pusher = new Pusher('c394426bdc9d55ba2658');
     var channel = pusher.subscribe('appointments');
     channel.bind('add_event', function(data) {
-      $('#calendar').fullCalendar( 'addEventSource', '/appointments.json?id=' + data.id );
+      //$('#calendar').fullCalendar( 'addEventSource', '/appointments.json?id=' + data.id );
+      $("#calendar").fullCalendar( 'refetchEvents' )
     });
     channel.bind('remove_event', function(data) {
       $('#calendar').fullCalendar( 'removeEvents', [data.id] );

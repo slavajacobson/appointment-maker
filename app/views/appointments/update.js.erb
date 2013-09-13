@@ -8,4 +8,9 @@
 	$('#edit_appointment').modal('hide');
 
 	show_alert("Appointment Update", "Your appointment was cancelled. Thank you!");
+
+<% elsif params[:unblock_appointment] %>
+	$('#edit_appointment').modal('hide');
+
+	show_alert("Appointment Update", "Succesfully unblocked!");
 <% end %>

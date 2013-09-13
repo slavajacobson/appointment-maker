@@ -17,6 +17,8 @@ json.array!(@appointments) do |appointment|
 	  json.className appointment.user.is_admin ? "blocked_event" : "user_event"
 	elsif appointment.user_id == current_user.id
 	  json.allDay false
+	  json.full_name appointment.user.full_name
+	  json.phone_number appointment.user.phone_number
 	  json.title "Your appointment. Click to modify."
 	  json.type appointment.appointment_type
 	  json.id appointment.id
