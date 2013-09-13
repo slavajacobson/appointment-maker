@@ -83,8 +83,13 @@ $(document).ready(function() {
         lazyFetching: false,
         events: '/appointments.json',
         loading: function(isLoading, view) {
-          // if (isLoading)
-          //   console.log(view);
+          if (isLoading) {
+            $("#loading").show();
+          }
+          else {
+            $("#loading").hide();
+          }
+          
 
         },
     
@@ -111,12 +116,12 @@ $(document).ready(function() {
     });
 
     $('#timepicker').timepicker({
-        minuteStep: 15,
+        minuteStep: 30,
         showInputs: false,
         disableFocus: true
     });
     $('#timepicker_start').timepicker({
-        minuteStep: 5,
+        minuteStep: 10,
         showInputs: false,
         disableFocus: true
     });
