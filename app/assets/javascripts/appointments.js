@@ -77,9 +77,9 @@ $(document).ready(function() {
         editable: false,
         defaultView: 'agendaWeek',
         allDaySlot: false,
-        minTime: 9,
+        minTime: 10,
         slotMinutes:30,
-        maxTime: 19,
+        maxTime: 20,
         lazyFetching: false,
         events: '/appointments.json',
         loading: function(isLoading, view) {
