@@ -153,11 +153,11 @@ function galleryHover(){
 	});	
 }
 function menuNav(){
-	$('.mainmenu li').removeClass('act');
-	$('.mainmenu li a[href$="'+location.hash.substr(1)+'"]').parent().addClass('act');
-	if($('.mainmenu li.act').parent().hasClass('sub_menu')){
-		$('.mainmenu li.act').parent().parent().addClass('act')
-	}
+	// $('.mainmenu li').removeClass('act');
+	// $('.mainmenu li a[href$="'+location.hash.substr(1)+'"]').parent().addClass('act');
+	// if($('.mainmenu li.act').parent().hasClass('sub_menu')){
+	// 	$('.mainmenu li.act').parent().parent().addClass('act')
+	// }
 }
 function formSubmit(){
 	$('.btn_send').click(function(){
