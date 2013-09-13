@@ -5,4 +5,4 @@ production:
   pool: 5
   host: localhost
   user: irina
-  password: 'irinas_spa1234!@#$'
+  password: irinas_spa1234!@#$

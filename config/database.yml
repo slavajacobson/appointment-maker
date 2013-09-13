@@ -17,12 +17,4 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
-
-production:
-  adapter: postgresql
-  database: irinas_spa
-  encoding: unicode
-  pool: 5
-  host: localhost
-  user: irina
-  password: 'irinas_spa1234!@#$'
+  
