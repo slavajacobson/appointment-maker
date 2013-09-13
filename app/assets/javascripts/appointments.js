@@ -80,7 +80,14 @@ $(document).ready(function() {
         minTime: 9,
         slotMinutes:30,
         maxTime: 19,
-        events: '/appointments.json'
+        lazyFetching: false,
+        events: '/appointments.json',
+        loading: function(isLoading, view) {
+          // if (isLoading)
+          //   console.log(view);
+
+        },
+    
 
     });
 
@@ -136,7 +143,7 @@ $(document).ready(function() {
         $(this).find("#timepicker").val(date + " " + time);
 
       }
-      console.log($(this).serialize());
+      //console.log($(this).serialize());
       $.post($(this).attr('action') + ".js", $(this).serialize(), function(data) {});
 
       if (typeof(time) == "undefined") {
@@ -153,15 +160,19 @@ $(document).ready(function() {
     // Enable pusher logging - don't include this in production
     Pusher.log = function(message) {
       if (window.console && window.console.log) {
-        window.console.log(message);
+        //window.console.log(message);
       }
     };
 
     var pusher = new Pusher('c394426bdc9d55ba2658');
     var channel = pusher.subscribe('appointments');
     channel.bind('add_event', function(data) {
+      $.get('/appointments.json?id=' + data.id, function(data) {
+        $('#calendar').fullCalendar('renderEvent', data[0]);
+      });
+      
       //$('#calendar').fullCalendar( 'addEventSource', '/appointments.json?id=' + data.id );
-      $("#calendar").fullCalendar( 'refetchEvents' )
+      //$("#calendar").fullCalendar( 'refetchEvents' )
     });
     channel.bind('remove_event', function(data) {
       $('#calendar').fullCalendar( 'removeEvents', [data.id] );
