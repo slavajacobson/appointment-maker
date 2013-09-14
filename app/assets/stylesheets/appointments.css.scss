@@ -31,13 +31,19 @@
   background-color: rgb(202, 90, 90);
   border-color: rgb(153, 70, 70);
   cursor:pointer;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 6px;
 }
 .user_event {
   cursor:pointer;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 6px;
 }
 .busy_event {
   background-color:grey;
   border-color:grey;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 6px;
 }
 
 img#loading {

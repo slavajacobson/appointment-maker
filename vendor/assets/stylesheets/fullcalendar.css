@@ -537,8 +537,6 @@ table.fc-border-separate {
 
 .fc-event-vert.fc-event-end {
 	border-bottom-width: 1px;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
 	}
 	
 .fc-event-vert .fc-event-time {

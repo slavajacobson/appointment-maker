@@ -3,7 +3,7 @@
 <%= form_for @appointment do |f| %>
   <%= hidden_field_tag :appointment_form_action %>
   <div class="make_appointment_server_info alert alert-error"></div>
-  <h4> Appointment Information </h2>
+  <h2> Appointment Information </h2>
 
   <% if edit_json %>
     <p>Name: <%= @appointment.user.full_name %></p>
@@ -15,26 +15,32 @@
   <% else %>
 
     <div class="field">
-      
+      <h4> Select Type </h2>
+      <%= f.select :appointment_type, [['Regular (60 minutes)', 0], ['Long (90  minutes)', 1], ['Longer (120 minutes)', 2]] %>
+    </div>
+
+
+    <div class="field">
+      <%= f.hidden_field :start_time, id: 'timepicker' %> 
       <div id="appointment_date_text">
       On <span style="font-weight:bold;" id="full_date"></span> at 
       </div> 
-      <div class="bootstrap-timepicker">
-        <%= f.text_field :start_time, id: 'timepicker', class:'input-small' %> 
+<!--       <div class="bootstrap-timepicker">
+        <%#= f.text_field :start_time, id: 'timepicker', class:'input-small' %> 
+      </div> -->
+      <div>
+        <%= select_tag :appointment_time, id:'appointment_time' %>
       </div>
     </div>
 
-    <div class="field">
-      <h4> Select Type </h2>
-      <%= f.select :appointment_type, [['Short', 0], ['Long', 1], ['Longer', 2]] %>
-    </div>
+
 
   <% end %>
 
 
   <div class="field">
-     <h4> Comments (optional) </h2>
-    <%= f.text_area :comment, style: 'width:515px; height:100px;' %> 
+     <h2> Comments (optional) </h2>
+    <%= f.text_area :comment, style: ' height:100px;' %> 
   </div>
 
 
