@@ -296,7 +296,7 @@ function generate_times_for_appointment(appt_type, date) {
       time_formatted = cur_time_slot.getHours() + ":" + cur_time_slot.getMinutes() + (cur_time_slot.getMinutes() < 10 ? '0' : '');
       $("select#appointment_time").append("<option value='" + time_formatted + "'>" + time_formatted + "</option>");
 
-      if ((cur_time_slot.getHours() == date.getHours() && cur_time_slot.getMinutes() == date.getMinutes()) || cur_time_slot.getHours() == date.getHours())
+      if (equalTime(cur_time_slot, date) || (cur_time_slot == null && cur_time_slot.getHours() == date.getHours()))
         selected_time = cur_time_slot;
 
     }
