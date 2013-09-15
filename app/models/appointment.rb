@@ -6,11 +6,20 @@ class Appointment < ActiveRecord::Base
 	validate :early_appointment
 	validate :late_appointment
 	validate :more_than_one_appointment_per_two_weeks
+	validate :time_selected
 
 	after_create :update_all_connected_clients_add_event
 	after_destroy :update_all_connected_clients_remove_event
 
+
+	def time_selected 
+		if self.start_time == self.start_time.at_beginning_of_day
+			errors.add(:start_time, "Please select appointment time from the drop down menu.")
+		end
+
+	end
 	def more_than_one_appointment_per_two_weeks
+
 		unless self.user.is_admin
 			apt_time = self.start_time
 			#debugger
