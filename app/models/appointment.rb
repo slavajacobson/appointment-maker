@@ -14,10 +14,10 @@ class Appointment < ActiveRecord::Base
 		unless self.user.is_admin
 			apt_time = self.start_time
 			#debugger
-			if Appointment.where("((start_time < ? AND start_time > ?) || (start_time > ? AND start_time < ?)) AND user_id = ?", apt_time, (apt_time - 14.days), apt_time, (apt_time + 14.days), self.user.id).first
+			if Appointment.where("((start_time < ? AND start_time > ?) OR (start_time > ? AND start_time < ?)) AND user_id = ?", apt_time, (apt_time - 14.days), apt_time, (apt_time + 14.days), self.user.id).first
 				errors.add(:start_time, "System only allows one appointment per two weeks. Please call directly to make an appointment.")
 
-				puts "ok"
+
 			end
 
 
