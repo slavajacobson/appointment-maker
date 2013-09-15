@@ -28,7 +28,7 @@ class Appointment < ActiveRecord::Base
 
 	def early_appointment 
 		if self.start_time  < (DateTime.now + 1.days).beginning_of_day && !self.user.is_admin
-			errors.add(:start_time, "To make an appointment for today, please call us directly.")
+			errors.add(:start_time, "To make an appointment within the next 24 hours please call us directly.")
 		end
 	end
 
