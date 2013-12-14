@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
   def show
   end
 
-  # GET /appointments/new
+  # GET /appointments/newr
   def new
     @appointment = Appointment.new
 
